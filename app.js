@@ -33,7 +33,6 @@ let token="xzcsdasfjhsjkdfhkjsfh......"
             console.log(decode) //{解析出账号密码}
         })
 */
-
 app.use(express.static("./public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser())
