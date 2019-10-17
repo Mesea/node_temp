@@ -14,7 +14,6 @@ var session=require("express-session");
 //静态资源站
 
 //token
-
 /*
 var jwt = require('jsonwebtoken');
 生成token
