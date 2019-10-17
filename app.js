@@ -3,6 +3,8 @@ var app=express();
 var bodyParser = require("body-parser");
 var cookieParser = require('cookie-parser');
 var session=require("express-session");
+var indexRouter=require("./router/index");
+var usersRouter=require("./router/users");
 
 //模板请求资源 js/store.js  自动去 public/js文件去找
 
@@ -52,7 +54,11 @@ app.use(session({
 app.set("views",__dirname+"/views"); //默认自动去 views找
 app.set("view engine","ejs");
 
+app.use("/",indexRouter);
+app.use("/users",usersRouter);
+
+
 app.get("/",(req,res)=>{
     res.send("OK");
 })
-app.listen(8844,"0.0.0.0");
+app.listen(8888,"0.0.0.0");
